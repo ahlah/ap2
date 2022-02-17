@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="/search" method='get'>
+    <input name="query" type="text" placeholder="Search">
+    <select name="sort">
+        <option value="price_ascending">Price Ascending</option>
+        <option value="price_descending">Price Descending</option>
+        <option value="rating_ascending">Rating Ascending</option>
+        <option value="rating_descending">Rating Descending</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/filter" method='get'>
+    <select name="filter">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+    <button type="submit">Apply</button>
+</form>
+<section>
+{% for hotel in hotels %}
+    <div>
+        <h2>{{ hotel.title }}</h2>
+        <h3>{{ hotel.price }}</h3>
+    </div>
+{% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{%  extends 'base.html' %}
+{% block content %}
+
+<hr>
+<div class="container">
+	<h1 class="display-1">Hello {{ user.first_name }} {{ user.last_name }}!</h1>
+</div>
+
+<hr>
+
+<div class="container">
+	<table class="table">
+		<tr>
+			<th>Hotel</th>
+			<th>Adults</th>
+			<th>Children</th>
+			<th>Check In</th>
+			<th>Check Out</th>
+		</tr>
+		{% for reservation in reservations %}
+		<tr>
+			<td>{{ reservation.hotel }}</td>
+			<td>{{ reservation.adults }}</td>
+			<td>{{ reservation.children }}</td>
+			<td>{{ reservation.checkin }}</td>
+			<td>{{ reservation.checkout }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% endblock %}

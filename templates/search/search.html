@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<hr>
+
+<div class="container">
+    <form action="/search" method='get' class="form-inline align-mi">
+        <div class="form-group">
+            <input name="query" type="text" placeholder="Search" value="{{ query }}" class="form-control" autocomplete="true">
+            <select name="sort" class="form-control">
+                <option value="pa" {% if sort == "pa" %} selected {% endif %}>Price Ascending</option>
+                <option value="pd" {% if sort == "pd" %} selected {% endif %}>Price Descending</option>
+                <option value="ra" {% if sort == "ra" %} selected {% endif %}>Rating Ascending</option>
+                <option value="rd" {% if sort == "rd" %} selected {% endif %}>Rating Descending</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Submit</button>        
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<div class="container p-0">
+    <div class="row">
+        {% for hotel in hotels %}
+            <div class="card col-sm-3">
+                <img class="card-img-top" src="{{ hotel.img1.url }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ hotel.title }}</h5>
+                    <p class="card-text">{{ hotel.rating }} &#9733;</p>
+                    <p class="card-text">&#8377;{{ hotel.price }}/night</p>
+                    <a href="/booking/hotel/{{ hotel.id }}" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

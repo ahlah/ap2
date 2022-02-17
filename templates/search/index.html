@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<hr>
+
+<div class="container">
+    <div class="jumbotron-fluid" style="background-image: url({% static 'bann.jpg' %}); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+        <div  class="py-5 my-5"></div>
+        <h1 class="display-1 py-5 my-5 w-100 text-center text-white">Travel & Explore</h1>
+        <div  class="py-5 my-5"></div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'tokyo.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Tokyo, Japan</h5>
+                <a href="/search?query=tokyo&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'ben.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Bengaluru, India</h5>
+                <a href="/search?query=bengaluru&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'kol.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Kolkata, India</h5>
+                <a href="/search?query=kolkata&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'l.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Delhi, India</h5>
+                <a href="/search?query=delhi&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'mum.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Mumbai, India</h5>
+                <a href="/search?query=mumbai&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'london.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">London, England</h5>
+                <a href="/search?query=london&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'nyc.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">New York City, USA</h5>
+                <a href="/search?query=york&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        <div class="card col-sm-3">
+            <img class="card-img-top" src="{%static 'paris.jpg'%}">
+            <div class="card-body">
+                <h5 class="card-title">Paris, France</h5>
+                <a href="/search?query=paris&sort=pd" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
